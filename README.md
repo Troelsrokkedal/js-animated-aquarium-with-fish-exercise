@@ -8,7 +8,7 @@
 ## 🛠️ Before You Start
 
 Before beginning this exercise, make sure to **fork the repository** so that you are working on your own copy.
-
+.
 ### How to fork a repository on GitHub.com
 
 1. Click the **Fork** icon in the upper right corner of the repository page.
