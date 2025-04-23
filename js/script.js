@@ -20,3 +20,37 @@ anchor.addEventListener("mouseenter", () => {
       anchorTooltip.innerText = "Klik for at stoppe musikken";
     }
   });
+
+  anchor.addEventListener("mouseleave", () => {
+    anchorTooltip.style.opacity = "0";
+  });
+
+  anchor.addEventListener("click", () => {
+    audio.muted = false;
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  });
+
+  const tooltip = document.getElementById("tooltip");
+
+  fishInfo.forEach((fish) => {
+    const fishElem = document.querySelectorAll("." + fish.className);
+  
+    fishElem.forEach((el) => {
+      el.addEventListener("click", (e) => {
+        tooltip.innerText = `${fish.art} — Alder: ${fish.alder}`;
+        tooltip.style.top = `${e.pageY - 40}px`;
+        tooltip.style.left = `${e.pageX + 20}px`;
+        tooltip.style.opacity = "1";
+        tooltip.style.fontSize = "1.15rem";
+  
+        // Hide tooltip after 3 seconds
+        setTimeout(() => {
+          tooltip.style.opacity = "0";
+        }, 3000);
+      });
+    });
+  });
